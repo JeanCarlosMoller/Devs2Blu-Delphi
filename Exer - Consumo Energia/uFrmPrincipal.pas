@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
-  TOpcoes = (opResidencia, opComercio, opIndustria);
+  TOpcoes = (opResidencia, opComercio, opIndustria, opFazenda);
 
   TFMoller = class(TForm)
     rdg_opcaoSelecao: TRadioGroup;
@@ -18,23 +18,18 @@ type
     lb_titulo: TLabel;
     Label2: TLabel;
     btn_limpar: TButton;
+    Label3: TLabel;
+    edt_descontoUsuario: TEdit;
+    Label4: TLabel;
+    Label5: TLabel;
     procedure btn_calculoClick(Sender: TObject);
     procedure btn_limparClick(Sender: TObject);
 
   private
     { Private declarations }
     procedure listarConsumo;
-    procedure calcResidencia;
-    procedure calcComercio;
-    procedure calcIndustria;
+    function calcConta(pConsumo, pTipo, pDesconto: double): double;
 
-    var
-      xConsumoKW, xValorTotal : Double;
-
-  const
-    c_valorResidencia = 0.60;
-    c_valorComercio   = 0.48;
-    c_valorIndustria  = 1.29;
 
   public
     { Public declarations }
@@ -47,52 +42,75 @@ implementation
 
 {$R *.dfm}
 
-procedure TFMoller.calcResidencia;
-begin
-  xValorTotal := (xConsumoKW * c_valorResidencia);
-  mm_listaConsumo.Lines.Add('Valor que deve ser pago: R$:' + xValorTotal.ToString);
-end;
 
 procedure TFMoller.btn_limparClick(Sender: TObject);
 begin
   mm_listaConsumo.Clear;
 end;
 
-procedure TFMoller.calcComercio;
+function TFMoller.calcConta(pConsumo, pTipo, pDesconto: double): double;
 begin
-  xValorTotal := (xConsumoKW * c_valorComercio);
-  mm_listaConsumo.Lines.Add('Valor que deve ser pago: R$:' + xValorTotal.ToString);
+  begin
+  Result := (pConsumo * pTipo) - pDesconto;
+
+end;
 end;
 
-procedure TFMoller.calcIndustria;
-begin
-  xValorTotal := (xConsumoKW * c_valorIndustria);
-  mm_listaConsumo.Lines.Add('Valor que deve ser pago: R$:' + xValorTotal.ToString);
-end;
 
 procedure TFMoller.listarConsumo;
+var
+  xConsumoKW, xValorTotal, xDesconto : Double;
+  xMensagem : string;
+const
+  c_valorResidencia = 0.60;
+  c_valorComercio   = 0.48;
+  c_valorIndustria  = 1.29;
+  c_valorFazenda    = 2.18;
 
 begin
+  xDesconto := strToFloatDef(edt_descontoUsuario.text, 0);
+
+  if edt_ConsumoUsuario.text = '' then
+  begin
+    showMessage('Insira o valor consumido em KW/h');
+    exit;
+  end;
+
+
   xConsumoKW := StrToFloat(edt_consumoUsuario.Text);
 
   case TOpcoes (rdg_opcaoSelecao.ItemIndex) of
 
   opResidencia:
   begin
-    calcResidencia;
+    xValorTotal := calcConta(xConsumoKW, c_valorResidencia, xDesconto);
   end;
 
   opComercio:
   begin
-    calcComercio;
+    xValorTotal := calcConta(xConsumoKW, c_valorComercio, xDesconto);
   end;
 
   opIndustria:
   begin
-    calcIndustria;
+    xValorTotal := calcConta(xConsumoKW, c_valorIndustria, xDesconto);
   end;
 
+  opFazenda:
+  begin
+    xValorTotal := calcConta(xConsumoKW, c_valorFazenda, xDesconto);
   end;
+
+  else
+    showMessage('Escolha tipo de consumidor');
+    exit;
+
+  end;
+
+  mm_listaConsumo.lines.add('Valor a pagar: ' + formatFloat('R$ 0.00',xValorTotal)
+                            + ' já aplicado o desconto de '
+                            + formatFloat('R$ 0.00',xDesconto));
+
 end;
 
 procedure TFMoller.btn_calculoClick(Sender: TObject);

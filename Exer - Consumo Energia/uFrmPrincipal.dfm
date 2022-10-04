@@ -2,7 +2,7 @@ object FMoller: TFMoller
   Left = 0
   Top = 0
   Caption = 'FMoller'
-  ClientHeight = 316
+  ClientHeight = 371
   ClientWidth = 369
   Color = clGrayText
   Font.Charset = DEFAULT_CHARSET
@@ -57,6 +57,41 @@ object FMoller: TFMoller
     Font.Style = []
     ParentFont = False
   end
+  object Label3: TLabel
+    Left = 56
+    Top = 256
+    Width = 31
+    Height = 13
+    Caption = 'Label3'
+  end
+  object Label4: TLabel
+    Left = 224
+    Top = 112
+    Width = 45
+    Height = 13
+    Caption = 'Desconto'
+    Color = clCream
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 332
+    Top = 158
+    Width = 13
+    Height = 13
+    Caption = 'R$'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object rdg_opcaoSelecao: TRadioGroup
     Left = 8
     Top = 48
@@ -72,7 +107,8 @@ object FMoller: TFMoller
     Items.Strings = (
       'Resid'#234'ncia. R$: 0,60 KW/h'
       'Com'#233'rcio.   R$: 0,48 KW/h'
-      'Ind'#250'stria.   R$: 1,29 KW/h')
+      'Ind'#250'stria.   R$: 1,29 KW/h'
+      'Fazenda.    R$ 2,18 KW/h')
     ParentBackground = False
     ParentColor = False
     ParentFont = False
@@ -87,7 +123,7 @@ object FMoller: TFMoller
   end
   object btn_calculo: TButton
     Left = 272
-    Top = 136
+    Top = 184
     Width = 73
     Height = 25
     Caption = 'Calcular'
@@ -96,7 +132,7 @@ object FMoller: TFMoller
   end
   object mm_listaConsumo: TMemo
     Left = 8
-    Top = 188
+    Top = 228
     Width = 353
     Height = 89
     Lines.Strings = (
@@ -105,11 +141,18 @@ object FMoller: TFMoller
   end
   object btn_limpar: TButton
     Left = 8
-    Top = 283
+    Top = 323
     Width = 73
     Height = 25
     Caption = 'Limpar'
     TabOrder = 4
     OnClick = btn_limparClick
+  end
+  object edt_descontoUsuario: TEdit
+    Left = 224
+    Top = 131
+    Width = 121
+    Height = 21
+    TabOrder = 5
   end
 end
