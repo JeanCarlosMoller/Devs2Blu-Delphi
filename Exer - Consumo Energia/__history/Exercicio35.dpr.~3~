@@ -1,0 +1,16 @@
+program Exercicio35;
+
+uses
+  Vcl.Forms,
+  uFrmPrincipal in 'uFrmPrincipal.pas' {Möller};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TMöller, Möller);
+  Application.CreateForm(TMöller, Möller);
+  Application.CreateForm(TMöller, Möller);
+  Application.Run;
+end.
