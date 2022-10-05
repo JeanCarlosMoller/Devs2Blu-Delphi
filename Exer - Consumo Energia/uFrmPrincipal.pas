@@ -1,3 +1,14 @@
+{
+35.3 Faça um algoritmo que calcule o valor da conta de luz de uma pessoa.
+Sabe-se que o cálculo da conta de luz segue a tabela abaixo:
+  Tipo de Cliente Valor do KW/h
+    a. (Residência) 0,80
+    b. (Comércio) 0,68
+    c. (Indústria) 1,49
+    d. (Fazenda) 3,18
+
+}
+
 unit uFrmPrincipal;
 
 interface
@@ -62,10 +73,10 @@ var
   xConsumoKW, xValorTotal, xDesconto : Double;
   xMensagem : string;
 const
-  c_valorResidencia = 0.60;
-  c_valorComercio   = 0.48;
-  c_valorIndustria  = 1.29;
-  c_valorFazenda    = 2.18;
+  c_valorResidencia = 0.80;
+  c_valorComercio   = 0.68;
+  c_valorIndustria  = 1.49;
+  c_valorFazenda    = 3.18;
 
 begin
   xDesconto := strToFloatDef(edt_descontoUsuario.text, 0);
