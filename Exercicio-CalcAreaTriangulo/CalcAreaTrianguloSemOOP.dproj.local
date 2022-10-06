@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/10/05 19:43:36.548,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/05 19:45:36.902,C:\Users\jcmoller\Desktop\Dev2Blu\16 - Aula\Exercicio-CalcAreaTriangulo\uFrmPrimeiraClasse.dfm=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/10/05 19:45:36.902,C:\Users\jcmoller\Desktop\Dev2Blu\16 - Aula\Exercicio-CalcAreaTriangulo\uFrmPrimeiraClasse.pas=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/05 19:46:01.121,C:\Users\jcmoller\Desktop\Dev2Blu\16 - Aula\Exercicio-CalcAreaTriangulo\CalcAreaTrianguloSemOOP.dproj=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
