@@ -1,0 +1,17 @@
+unit UTriangulo;
+
+interface
+
+type
+  TTriangulo = class
+    public
+      a: Double;
+      b: Double;
+      c: Double;
+
+      function Area: Double;
+  end;
+
+implementation
+
+end.
