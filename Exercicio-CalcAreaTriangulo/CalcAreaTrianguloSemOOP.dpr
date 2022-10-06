@@ -2,7 +2,8 @@ program CalcAreaTrianguloSemOOP;
 
 uses
   Vcl.Forms,
-  uFrmPrimeiraClasse in 'uFrmPrimeiraClasse.pas' {Form1};
+  uFrmPrimeiraClasse in 'uFrmPrimeiraClasse.pas' {Form1},
+  UTriangulo in 'UTriangulo.pas';
 
 {$R *.res}
 

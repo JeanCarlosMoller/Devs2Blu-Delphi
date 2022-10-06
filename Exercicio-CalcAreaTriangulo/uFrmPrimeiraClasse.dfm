@@ -193,5 +193,6 @@ object Form1: TForm1
     Height = 25
     Caption = 'Calcular OOP'
     TabOrder = 7
+    OnClick = btn_calcularOOPClick
   end
 end

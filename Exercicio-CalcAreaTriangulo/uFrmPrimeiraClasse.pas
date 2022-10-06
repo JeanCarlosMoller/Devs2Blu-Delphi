@@ -58,15 +58,20 @@ type
     lb_areaTrianguloY: TLabel;
     lb_trianguloMaiorArea: TLabel;
     procedure btn_calcularClick(Sender: TObject);
+    procedure btn_calcularOOPClick(Sender: TObject);
   private
     { Private declarations }
 
     xValorAreaTrianguloX, xValorAreaTrianguloY : Double;
 
+    procedure calcularAreasOOP;
+
     procedure calcularSemOOP;
     procedure calcTrianguloX;
     procedure calcTrianguloY;
     procedure calcMaiorArea;
+
+
 
   public
     { Public declarations }
@@ -77,7 +82,15 @@ var
 
 implementation
 
+uses
+  UTriangulo;
+
 {$R *.dfm}
+
+procedure TForm1.btn_calcularOOPClick(Sender: TObject);
+begin
+  Self.calcularAreasOOP;
+end;
 
 procedure TForm1.calcMaiorArea;
 
@@ -141,6 +154,46 @@ begin
 
   lb_areaTrianguloY.Caption := ('Triângulo Y Área: ' +
   FormatFloat('0.00', xValorAreaTrianguloY));
+
+end;
+
+procedure TForm1.calcularAreasOOP;
+var
+  xTrianguloX: TTriangulo;
+  xTrianguloY: TTriangulo;
+
+  xAreaX, xAreaY : Double;
+begin
+  xTrianguloX := TTriangulo.Create;
+  xTrianguloY := TTriangulo.Create;
+
+  try
+    //Primeiro Triângulo  X
+    xTrianguloX.a := StrToFloatDef(edt_tringuloX_a.Text,0);
+    xTrianguloX.b := StrToFloatDef(edt_tringuloX_b.Text,0);
+    xTrianguloX.c := StrToFloatDef(edt_tringuloX_c.Text,0);
+
+    xAreaX := xTrianguloX.Area;
+
+    //Segundo Triângulo  Y
+    xTrianguloY.a := StrToFloatDef(edt_tringuloY_a.Text,0);
+    xTrianguloY.b := StrToFloatDef(edt_tringuloY_b.Text,0);
+    xTrianguloY.c := StrToFloatDef(edt_tringuloY_c.Text,0);
+
+    xAreaY := xTrianguloY.Area;
+
+    lb_areaTrianguloX.Caption := 'Triângulo X Área: ' + FormatFloat('0.00', xAreaX);
+    lb_areaTrianguloY.Caption := 'Triângulo Y Área: ' + FormatFloat('0.00', xAreaY);
+
+    if (xAreaX > xAreaY) then
+      lb_trianguloMaiorArea.Caption := 'A área do triângulo X é maior.'
+    else
+      lb_trianguloMaiorArea.Caption := 'A área do triângulo Y é maior.';
+  finally
+    FreeAndNil(xTrianguloX);
+    FreeAndNil(xTrianguloY);
+
+  end;
 
 end;
 
