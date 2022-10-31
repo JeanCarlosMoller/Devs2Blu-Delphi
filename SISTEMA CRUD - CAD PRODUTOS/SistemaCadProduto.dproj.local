@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/10/05 21:21:44.000.438,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 20:15:20.131,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 20:15:59.287,C:\Users\jcmoller\Desktop\Dev2Blu\Exercicio 31-10-2022\SISTEMA CRUD - CAD PRODUTOS\uFrmPrincipal.pas=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 20:15:59.287,C:\Users\jcmoller\Desktop\Dev2Blu\Exercicio 31-10-2022\SISTEMA CRUD - CAD PRODUTOS\uFrmPrincipal.dfm=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/10/31 20:16:19.194,C:\Users\jcmoller\Desktop\Dev2Blu\Exercicio 31-10-2022\SISTEMA CRUD - CAD PRODUTOS\SistemaCadProduto.dproj=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
