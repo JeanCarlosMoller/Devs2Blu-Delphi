@@ -42,7 +42,8 @@ begin
   if not Assigned(frmCompradores) then
     frmCompradores := TfrmCompradores.Create(Self);
 
-    frmCompradores.Show;
+    frmCmpradores.Show;
+
 end;
 
 end.
