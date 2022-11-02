@@ -1891,7 +1891,6 @@ object Form1: TForm1
     Color = clScrollBar
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 483
     object Img_produto: TImage
       Left = 16
       Top = 16
@@ -1929,6 +1928,7 @@ object Form1: TForm1
         0BA1935C0C705CF2FD252979202F037C37A9F338C7205755D40D0F32408D065D
         8D34DE727EF26C8FBAE1610C14847E0138FCDE3140B115680000000049454E44
         AE426082}
+      OnClick = Img_produtoClick
     end
     object Img_comprador: TImage
       Left = 128
@@ -2014,6 +2014,7 @@ object Form1: TForm1
         40A9EE18EF02C77C16466F45DD059E8F579D2B1A9CC5BFB928104AE4237026C7
         7E4E64A7C0DA1CC7596E36BB20E0641405E28EC40BFC0159BBB031073F9E4500
         00000049454E44AE426082}
+      OnClick = Img_fornecedorClick
     end
     object Img_UnidadeMedida: TImage
       Left = 351
@@ -2050,6 +2051,7 @@ object Form1: TForm1
         25C04B8A5C85FACBE82E6DD00292428DEF7AA7EFA43354FC116822291FDE53FE
         DFCE0E3DF63CB84BF298E6467E271996A477B655456E915400DDBE36BCD56BFE
         8A12A8A81810701D152FF00FCC9DC731A4253F6C0000000049454E44AE426082}
+      OnClick = Img_UnidadeMedidaClick
     end
     object Img_Pedidos: TImage
       Left = 464
@@ -2096,11 +2098,12 @@ object Form1: TForm1
         886EB2631C36FC4374D1D5147D2B5FC945E703C641A0233966F763B4FEEC5158
         74FFE0D4F8D45E052B90E9FFADF20BB17B3D40E5CACDCD0000000049454E44AE
         426082}
+      OnClick = Img_PedidosClick
     end
     object Label1: TLabel
       Left = 24
       Top = 87
-      Width = 73
+      Width = 57
       Height = 14
       Alignment = taCenter
       Caption = 'Produtos'
@@ -2141,7 +2144,7 @@ object Form1: TForm1
     object Label4: TLabel
       Left = 355
       Top = 87
-      Width = 77
+      Width = 68
       Height = 14
       Alignment = taCenter
       Caption = 'Un. M'#233'dida'
@@ -2155,10 +2158,10 @@ object Form1: TForm1
     object Label5: TLabel
       Left = 472
       Top = 87
-      Width = 73
+      Width = 48
       Height = 14
       Alignment = taCenter
-      Caption = 'Produtos'
+      Caption = 'Pedidos'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12

@@ -12,7 +12,6 @@ uses
 
 type
   TfrmCompradores = class(TForm)
-    DBNavigator1: TDBNavigator;
     DBGrid1: TDBGrid;
     FDTable1: TFDTable;
     FDTable1Id: TFDAutoIncField;
@@ -25,6 +24,7 @@ type
     DBEdit2: TDBEdit;
     Label3: TLabel;
     DBEdit3: TDBEdit;
+    DBNavigator1: TDBNavigator;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
   private
