@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/10/05 21:21:44.000.438,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/06 19:04:56.000.718,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/06 19:06:32.000.983,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/06 19:15:00.000.206,C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\GIT\Manipulação de Arquivo\Lendo Arquivo Texto\uFrmPrincipal.pas</Transaction>
+    <Transaction>2022/12/06 19:15:00.000.206,C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\GIT\Manipulação de Arquivo\Lendo Arquivo Texto\uFrmPrincipal.dfm</Transaction>
+    <Transaction>2022/12/06 19:15:15.000.197,C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\GIT\Manipulação de Arquivo\Lendo Arquivo Texto\LendoArquivoTexto.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
