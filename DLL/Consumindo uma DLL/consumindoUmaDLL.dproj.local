@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/10/05 21:21:44.000.438,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/06 19:04:56.000.718,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/07 21:32:23.000.297,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/07 21:45:40.000.565,C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\GIT\Devs2Blu-Delphi\DLL\Nova pasta\ufrmPrincipal.pas</Transaction>
+    <Transaction>2022/12/07 21:45:40.000.565,C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\GIT\Devs2Blu-Delphi\DLL\Nova pasta\ufrmPrincipal.dfm</Transaction>
+    <Transaction>2022/12/07 21:46:36.000.722,C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\GIT\Devs2Blu-Delphi\DLL\Nova pasta\consumindoUmaDLL.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

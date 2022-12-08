@@ -4,8 +4,10 @@
     <Transaction>2022/10/05 21:21:44.000.438,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2022/12/06 19:04:56.000.718,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2022/12/07 20:24:29.836,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/12/07 20:31:06.303,C:\GIT\Devs2Blu-Delphi\DLL\ufrmPrincipal.pas=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2022/12/07 20:31:06.303,C:\GIT\Devs2Blu-Delphi\DLL\ufrmPrincipal.dfm=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/12/07 20:31:06.303,C:\GIT\Devs2Blu-Delphi\DLL\ufrmPrincipal.pas=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2022/12/07 20:31:24.698,C:\GIT\Devs2Blu-Delphi\DLL\InfoComputador.dproj=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/12/07 20:31:40.823,=C:\GIT\Devs2Blu-Delphi\DLL\Unit1.pas</Transaction>
+    <Transaction>2022/12/07 20:31:54.869,C:\GIT\Devs2Blu-Delphi\DLL\uinfoPC.pas=C:\GIT\Devs2Blu-Delphi\DLL\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>
