@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/10/05 21:21:44.000.438,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/06 19:04:56.000.718,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/09 18:49:47.556,=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/09 18:52:02.135,C:\GIT\Devs2Blu-Delphi\Manipulação de Arquivo\DLL no Delphi\ConsumindoDll\ufrmPrincipal.dfm=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/12/09 18:52:02.135,C:\GIT\Devs2Blu-Delphi\Manipulação de Arquivo\DLL no Delphi\ConsumindoDll\ufrmPrincipal.pas=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/09 18:52:15.844,C:\GIT\Devs2Blu-Delphi\Manipulação de Arquivo\DLL no Delphi\ConsumindoDll\ConsumindoDll.dproj=C:\Users\jcmoller\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
