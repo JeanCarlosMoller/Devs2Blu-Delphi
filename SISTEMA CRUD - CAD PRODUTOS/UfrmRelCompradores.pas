@@ -8,10 +8,10 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   frxClass, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  frxExportBaseDialog, frxExportPDF, UdmPedidos;
+  frxExportBaseDialog, frxExportPDF, UdmPedidos, frxDBSet;
 
 type
-  TForm2 = class(TForm)
+  TfrmRelCompradores = class(TForm)
     GroupBox1: TGroupBox;
     edtDescricao: TEdit;
     Label1: TLabel;
@@ -19,19 +19,64 @@ type
     btnVisualizar: TButton;
     FDQuery1: TFDQuery;
     frxReport1: TfrxReport;
-    frxUserDataSet1: TfrxUserDataSet;
     frxPDFExport1: TfrxPDFExport;
+    frxDBDataset1: TfrxDBDataset;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnExportarClick(Sender: TObject);
+    procedure btnVisualizarClick(Sender: TObject);
   private
     { Private declarations }
+    procedure PrepararFiltro;
   public
     { Public declarations }
   end;
 
 var
-  Form2: TForm2;
+  frmRelCompradores: TfrmRelCompradores;
 
 implementation
 
 {$R *.dfm}
+
+procedure TfrmRelCompradores.btnExportarClick(Sender: TObject);
+var
+  xCaminho : String;
+begin
+  Self.PrepararFiltro;
+
+  xCaminho := ExtractFilePath(Application.ExeName) + 'temp';
+
+  if not DirectoryExists(xCaminho) then
+    ForceDirectories(xCaminho);
+
+  frxPDFExport1.FileName := Format('%s\Compradores.pdf', [xCaminho]);
+  frxReport1.PrepareReport();
+  frxReport1.Export(frxPDFExport1);
+
+end;
+
+procedure TfrmRelCompradores.btnVisualizarClick(Sender: TObject);
+begin
+  Self.PrepararFiltro;
+  frxReport1.ShowReport;
+end;
+
+procedure TfrmRelCompradores.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+  FDQuery1.Close;
+
+  frmRelCompradores := nil;
+end;
+
+procedure TfrmRelCompradores.PrepararFiltro;
+begin
+  FDQuery1.Close;
+  FDQuery1.ParamByName('NOME').AsString := '';
+  if Trim(edtDescricao.Text) <> EmptyStr then
+    FDQuery1.ParamByName('NOME').AsString := '%' +
+    Trim(edtDescricao.Text) +'%';
+  FDQuery1.Open();
+end;
 
 end.

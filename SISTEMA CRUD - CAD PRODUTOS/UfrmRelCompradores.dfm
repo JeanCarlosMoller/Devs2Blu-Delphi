@@ -1,4 +1,4 @@
-object Form2: TForm2
+object frmRelCompradores: TfrmRelCompradores
   Left = 0
   Top = 0
   Caption = 'Relat'#243'rio Compradores'
@@ -11,6 +11,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -41,6 +42,7 @@ object Form2: TForm2
       Height = 25
       Caption = 'Exportar'
       TabOrder = 1
+      OnClick = btnExportarClick
     end
     object btnVisualizar: TButton
       Left = 246
@@ -49,6 +51,7 @@ object Form2: TForm2
       Height = 25
       Caption = 'Visualizar'
       TabOrder = 2
+      OnClick = btnVisualizarClick
     end
   end
   object FDQuery1: TFDQuery
@@ -68,7 +71,7 @@ object Form2: TForm2
       end>
   end
   object frxReport1: TfrxReport
-    Version = '6.7'
+    Version = '2023.1.3'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
@@ -76,7 +79,7 @@ object Form2: TForm2
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44937.902424212960000000
-    ReportOptions.LastChange = 44937.910423402780000000
+    ReportOptions.LastChange = 44938.040082569450000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -86,8 +89,8 @@ object Form2: TForm2
     Top = 176
     Datasets = <
       item
-        DataSet = frxUserDataSet1
-        DataSetName = 'frxUserDataSet1'
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
       end>
     Variables = <>
     Style = <>
@@ -96,6 +99,8 @@ object Form2: TForm2
       Width = 1000.000000000000000000
     end
     object Page1: TfrxReportPage
+      HGuides.Strings = (
+        '46')
       PaperWidth = 210.000000000000000000
       PaperHeight = 297.000000000000000000
       PaperSize = 9
@@ -105,10 +110,12 @@ object Form2: TForm2
       BottomMargin = 10.000000000000000000
       Frame.Typ = []
       MirrorMode = []
-      HGuides.Strings = (
-        '46')
       object ReportTitle1: TfrxReportTitle
         FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
         Frame.Typ = []
         Height = 64.252010000000000000
         Top = 18.897650000000000000
@@ -134,6 +141,10 @@ object Form2: TForm2
       end
       object Header1: TfrxHeader
         FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
         Frame.Typ = []
         Height = 41.574830000000000000
         Top = 143.622140000000000000
@@ -172,7 +183,7 @@ object Form2: TForm2
         end
         object Memo4: TfrxMemoView
           AllowVectorExport = True
-          Left = 294.803340000000000000
+          Left = 423.307360000000000000
           Top = 11.338590000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
@@ -187,18 +198,71 @@ object Form2: TForm2
           ParentFont = False
         end
       end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 56.692950000000000000
+        Top = 207.874150000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        RowCount = 0
+        object frxDBDataset1ID: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 11.338590000000000000
+          Top = 15.118120000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'ID'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."ID"]')
+        end
+        object frxDBDataset1nome: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 147.401670000000000000
+          Top = 15.118120000000000000
+          Width = 226.771800000000000000
+          Height = 18.897650000000000000
+          DataField = 'nome'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."nome"]')
+        end
+        object frxDBDataset1cargo: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 423.307360000000000000
+          Top = 15.118120000000000000
+          Width = 400.630180000000000000
+          Height = 18.897650000000000000
+          DataField = 'cargo'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."cargo"]')
+        end
+      end
     end
-  end
-  object frxUserDataSet1: TfrxUserDataSet
-    UserName = 'frxUserDataSet1'
-    Left = 144
-    Top = 176
   end
   object frxPDFExport1: TfrxPDFExport
     UseFileCache = True
     ShowProgress = True
     OverwritePrompt = False
     DataOnly = False
+    EmbedFontsIfProtected = False
+    InteractiveFormsFontSubset = 'A-Z,a-z,0-9,#43-#47 '
     OpenAfterExport = False
     PrintOptimized = False
     Outline = False
@@ -208,6 +272,7 @@ object Form2: TForm2
     Transparency = False
     Author = 'FastReport'
     Subject = 'FastReport PDF export'
+    Creator = 'FastReport'
     ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
     HideToolbar = False
     HideMenubar = False
@@ -219,6 +284,15 @@ object Form2: TForm2
     PDFStandard = psNone
     PDFVersion = pv17
     Left = 296
+    Top = 176
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    DataSet = FDQuery1
+    BCDToCurrency = False
+    DataSetOptions = []
+    Left = 144
     Top = 176
   end
 end

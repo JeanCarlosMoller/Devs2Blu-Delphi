@@ -1,0 +1,36 @@
+unit UfrmRelFornecedores;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, frxClass, frxExportBaseDialog, frxExportPDF,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, UdmPedidos;
+
+type
+  TfrmRelFornecedores = class(TForm)
+    GroupBox1: TGroupBox;
+    edtDescricao: TEdit;
+    lblDescricao: TLabel;
+    btnExportar: TButton;
+    btnVisualizar: TButton;
+    frxReport1: TfrxReport;
+    frxUserDataSet1: TfrxUserDataSet;
+    frxPDFExport1: TfrxPDFExport;
+    FDQuery1: TFDQuery;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRelFornecedores: TfrmRelFornecedores;
+
+implementation
+
+{$R *.dfm}
+
+end.
