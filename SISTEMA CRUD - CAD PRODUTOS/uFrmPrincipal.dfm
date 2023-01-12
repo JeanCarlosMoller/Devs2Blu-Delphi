@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Form1'
   ClientHeight = 473
-  ClientWidth = 582
+  ClientWidth = 750
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form1: TForm1
   object Img_principal: TImage
     Left = 0
     Top = 121
-    Width = 582
+    Width = 750
     Height = 352
     Align = alClient
     Center = True
@@ -1885,12 +1885,13 @@ object Form1: TForm1
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 582
+    Width = 750
     Height = 121
     Align = alTop
     Color = clScrollBar
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 582
     object Img_produto: TImage
       Left = 16
       Top = 16
@@ -2168,6 +2169,66 @@ object Form1: TForm1
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
+    end
+    object Img_Relatorio: TImage
+      Left = 576
+      Top = 16
+      Width = 81
+      Height = 65
+      Center = True
+      Picture.Data = {
+        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
+        003008060000005702F987000000097048597300000B1300000B1301009A9C18
+        000001944944415478DAED9ABD4A43311886D34D1C1CF40A2ABAABBD02075D1C
+        BA38B97B034EA28376A8E0E21D78057571D582AB20E80DF8B738FAB3286EFA06
+        3C1062D27C4DF30BDF0B0FB4E59C9CF7398494E6B425FCB2022EC1ACE7F93E79
+        02EBE05EFDB0E559FE0ACC242CDF641F1C4D2290E3CEABE981435F8125300473
+        AE4103478E7D30A9805EFE1B4CD522A097FF0003B05D8380A9BC5C0936460D5A
+        8A80ADFC8D6BD012044695770E9A5B60115C0BFA52599CC01EE88F71817F5F2E
+        B905D4135C317EBD9724107B7AB0000BB0000B8C2FF0E3389F0558800558A04E
+        8165F00E9E6B14687E407D8255F0589380BED774073ACA75B209C862677FAF37
+        C12DA1FC1B58D38ECD2240294639268B806DFB512D482D9F5CC0544C68EF77C0
+        09B17C5201DB5D15C2BE21EC2A9F4CC035254CD38A523E8900753EABC751CB47
+        17E810CB3759005D702EE85B3151055E857DFB3154A20A3489553E89C0173805
+        2F810A1FA716081DBD53708107305FB3805C49B6C0742481DDD802A9C3022C90
+        53A0B44479469632A43F7BC865F202B473B7D5627C1EF70B0F0716409EE0A362
+        0000000049454E44AE426082}
+      PopupMenu = PopupMenu1
+    end
+    object Label6: TLabel
+      Left = 576
+      Top = 87
+      Width = 62
+      Height = 14
+      Alignment = taCenter
+      Caption = 'Relat'#243'rios'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 704
+    Top = 32
+    object Produtos1: TMenuItem
+      Caption = '&Produtos'
+      OnClick = Produtos1Click
+    end
+    object Compradores1: TMenuItem
+      Caption = '&Compradores'
+    end
+    object Fornecedores1: TMenuItem
+      Caption = '&Fornecedores'
+    end
+    object UnMedida1: TMenuItem
+      Caption = '&Un. Medida'
+      OnClick = UnMedida1Click
+    end
+    object Pedidos1: TMenuItem
+      Caption = '&Pedidos'
     end
   end
 end

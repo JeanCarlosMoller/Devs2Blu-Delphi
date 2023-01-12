@@ -1,0 +1,73 @@
+unit UfrmRelProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, frxClass, frxDBSet,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, frxExportBaseDialog, frxExportPDF, UdmPedidos;
+
+type
+  TfrmRelProduto = class(TForm)
+    GroupBox1: TGroupBox;
+    edtDescricao: TEdit;
+    lblDescricao: TLabel;
+    btnExportar: TButton;
+    btnVisualizar: TButton;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    FDQuery1: TFDQuery;
+    frxPDFExport1: TfrxPDFExport;
+    procedure btnVisualizarClick(Sender: TObject);
+    procedure btnExportarClick(Sender: TObject);
+  private
+    { Private declarations }
+    procedure PrepararFiltro;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRelProduto: TfrmRelProduto;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmRelProduto.btnExportarClick(Sender: TObject);
+var
+    xCaminho : String;
+begin
+  Self.PrepararFiltro;
+
+  xCaminho := ExtractFilePath(Application.ExeName) + 'temp';
+
+  if not DirectoryExists(xCaminho) then
+    ForceDirectories(xCaminho);
+
+  frxPDFExport1.FileName := Format('%s\Produto.pdf', [xCaminho]);
+  frxReport1.PrepareReport();
+  frxReport1.Export(frxPDFExport1);
+end;
+
+procedure TfrmRelProduto.btnVisualizarClick(Sender: TObject);
+begin
+  Self.PrepararFiltro;
+  frxReport1.ShowReport;
+end;
+
+procedure TfrmRelProduto.PrepararFiltro;
+begin
+  FDQuery1.Close;
+  FDQuery1.ParamByName('DESCRICAO').AsString := '';
+  if Trim(edtDescricao.Text) <> EmptyStr then
+    FDQuery1.ParamByName('DESCRICAO').AsString :=
+      '%' + Trim(edtDescricao.Text) + '%';
+  FDQuery1.Open();
+end;
+
+end.

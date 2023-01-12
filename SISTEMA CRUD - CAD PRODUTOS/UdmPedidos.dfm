@@ -16,9 +16,7 @@ object dmPedidos: TdmPedidos
     Top = 152
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
-    VendorLib = 
-      'C:\Users\jcmoller\Desktop\Dev2Blu\Exercicio 31-10-2022\SISTEMA C' +
-      'RUD - CAD PRODUTOS\libmysql.dll'
+    VendorLib = 'C:\GIT\Devs2Blu-Delphi\SISTEMA CRUD - CAD PRODUTOS\libmysql.dll'
     Left = 240
     Top = 216
   end
